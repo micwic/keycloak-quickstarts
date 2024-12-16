@@ -76,9 +76,9 @@
         });
 
       const keycloak = new Keycloak({
-        url: "http://localhost:8071",
-        realm: "cii-via-cip",
-        clientId: "portal-b2c-mockup",
+        url: "http://localhost:8180",
+        realm: "quickstart",
+        clientId: "spa",
       });
 
       await keycloak.init({ onLoad: "login-required" });

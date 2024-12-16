@@ -2,7 +2,7 @@ import express from 'express';
 import url from 'node:url';
 
 const app = express();
-const port = 8080;
+const port = 8093;
 
 app.use('/', express.static('public'));
 app.use('/vendor/keycloak.js', express.static(resolveDependency('keycloak-js')));
