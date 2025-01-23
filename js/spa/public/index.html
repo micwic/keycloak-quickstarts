@@ -2,15 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Keycloak Single-Page Application Example</title>
+    <title>B2C Portal Mockup based on Keycloak Single-Page Application Example</title>
     <script type="importmap">
       {
         "imports": {
-          "keycloak-js": "/vendor/keycloak.js"
+          "keycloak-js": "/vendor/keycloak.js",
+          "@flowable/work-views": "/dist/flowable-work-views.esm.js"
         }
       }
     </script>
     <link rel="modulepreload" href="/vendor/keycloak.js">
+    <link rel="stylesheet" href="/node_modules/@flowable/work-views/dist/index.css">
   </head>
   <body>
     <div id="user" style="display: none;">
@@ -26,6 +28,10 @@
 
     <div id="flowable-app-view"></div>
     <div id="flowable-app-view-error-message" style="display: none; color: red;"></div>
+    <script type="text/javascript">
+      window.flowable = window.flowable || {};
+      window.flowable.endpoints = { baseUrl: "/flowable-work" };
+    </script>
 
     <script type="module">
       import Keycloak from "keycloak-js";
@@ -88,5 +94,6 @@
       await keycloak.init({ onLoad: "login-required" });
       showProfile();
     </script>
+    <script type="module" src="../dist/portal-b2c-mockup-client.esm.js"></script>
   </body>
 </html>

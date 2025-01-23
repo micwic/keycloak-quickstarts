@@ -1,3 +1,4 @@
+// keycloack settings not used/reset in portal-b2c-mockup context, baseUrl is set in index.html
 const baseUrl = 'http://127.0.0.1:8180';
 
 export default {
