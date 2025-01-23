@@ -37,15 +37,12 @@ app.use(
         cookiePathRewrite: {
             '*': '/'                        // Réécrit les chemins des cookies
         },
-        // Ajout de logs via `onProxyReq`
         onProxyReq: (proxyReq, req) => {
-            // `req.url` est accessible ici
             console.log(`[DEBUG] Proxying request to: ${proxyReq.path}`);
         },
-        // Ajout de logs sur la réponse du backend
         onProxyRes: (proxyRes, req, res) => {
             console.log(`[DEBUG] Backend responded with: ${proxyRes.statusCode}`);
-        },
+        }
     })
 );
 
